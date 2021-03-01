@@ -24,6 +24,7 @@ class ViewController: UIViewController {
 
         demo1()
         demo2()
+        demo3()
     }
     
     // MARK: - view
@@ -57,6 +58,39 @@ class ViewController: UIViewController {
         
     }
     
+    // MARK: - 可选类型
+//    可选类型有可能有值,也有可能为nil
+//    let声明可选类型是没有意义的
+//    必选类型一定有值
+    func demo3() {
+        var a: Int? = 10
+        print(a ?? 0)
+        a = nil
+        print(a ?? 0)//可选类型的打印 必须要有默认值，在为nil的时候，就执行默认值
+
+        var b: Int? = 10
+        let c = b ?? 0 + 10
+        
+        var d = 10
+        let f = 22 + d
+        
+        print("demo3",b ?? 0,c,d,f)
+        b = nil;
+        print("demo3",b ?? -1,c,d,f)
+        d = 15;
+        b = 1;
+        print("demo3",b ?? 0,c,d,f)
+        
+//        使用'?'或者'!'进行解包
+//        -- '!' 强制解包 一定要获取一个值 不能够为nil
+//        -- '?'如果可选类型要进行计算的时候,系统会报错,需要程序员手动处理可选类型
+//        -- '!' 强制解包有风险,需要谨慎使用,程序员需要对'!'负责 如果为nil 程序会崩溃
+//        -- 一定要考虑是否安全 一定有值 防患于未然
+//        -- '??' 合并空选项 必须提高 ?? 的优先级
+
+        
+        
+    }
     
 }
 
