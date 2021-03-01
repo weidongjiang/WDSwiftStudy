@@ -25,6 +25,7 @@ class ViewController: UIViewController {
         demo1()
         demo2()
         demo3()
+        demo4()
     }
     
     // MARK: - view
@@ -87,7 +88,23 @@ class ViewController: UIViewController {
 //        -- '!' 强制解包有风险,需要谨慎使用,程序员需要对'!'负责 如果为nil 程序会崩溃
 //        -- 一定要考虑是否安全 一定有值 防患于未然
 //        -- '??' 合并空选项 必须提高 ?? 的优先级
-
+    }
+    
+    // MARK: - 条件语句
+//        分支结构 if语句
+//
+//        条件语句没有() ，可以写，但不推荐写
+//        分支结构必须有 {}
+//        没有非零即真的概念，只有true 和false
+    func demo4() {
+        let a = 3
+        if a < 22 {
+            print(a,"小于 22")
+        }else {
+            print(a,"大于 22")
+        }
+        
+        
         
         
     }
