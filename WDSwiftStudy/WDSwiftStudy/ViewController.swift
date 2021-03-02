@@ -27,9 +27,50 @@ class ViewController: UIViewController {
         demo3()
         demo4(a: 22)
         demo5()
+        demo6()
+    }
+    // MARK: - range区间
+    func demo6() {
+        print("====================")
+        let range = 0...10
+        let ishave = range.contains(5)// 区间是否包含5
+        print("ishave",ishave)
+        
+        let range1:ClosedRange<Int> = 1...5
+        let range2:Range<Int> = 1..<5
+        let range3:PartialRangeThrough<Int> = ...15
+        
+        print(range1)
+        print(range2)
+        print(range3)
+
+        
+        let stringRange = "a"..."z"
+        let isHave_b = stringRange.contains("b")
+        print("isHave_b",isHave_b)
+        
+        let stringRange2 = "cc"..."ff"
+        let isHave_cb = stringRange2.contains("cb")
+        let isHave_dz = stringRange2.contains("dz")
+        let isHave_fg = stringRange2.contains("fg")
+        print("isHave_cb",isHave_cb)
+        print("isHave_dz",isHave_dz)
+        print("isHave_fg",isHave_fg)
+
+        
+        let tiem = 14
+        let margin = 2
+        for item in stride(from: 4, through: tiem, by: margin) {// 包含最后的数，through从头到尾的彻底的穿过
+            print("stride through",item)
+        }
+        print("-----------")
+        for item in stride(from: 4, to: tiem, by: margin) {//不包含最后的数据
+            print("stride to",item)
+        }
+        
     }
     
-    // MARK: - 循环
+    // MARK: - for循环
     func demo5() {
         
         var num = 50
