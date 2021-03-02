@@ -31,7 +31,38 @@ class ViewController: UIViewController {
         demo7()
         demo8()
         demo9()
+        demo10()
     }
+    
+    // MARK: - 函数
+    func demo10()  {
+        print("==================== demo10")
+        func numT(a:Int,b:Int) {
+            print(a*b)
+        }
+        numT(a: 3, b: 3)
+        
+        num1(a: 101, b:101)
+        let c = num2(a: 101, b: 101)
+        print("num2",c)
+        
+        let d = num3(width: 201, height: 201)
+        print("num3",d)
+    }
+    
+    func num1(a:Int,b:Int) {
+        let c = a*b
+        print("num1",c)
+    }
+    
+    func num2(a:Int,b:Int) -> Int {
+        return a*b
+    }
+    
+    func num3(width a:Int,height b:Int) -> Int {
+        return a*b
+    }
+    
     // MARK: - 条件选择 where
     func demo9() {
         print("==================== demo9")
@@ -48,9 +79,6 @@ class ViewController: UIViewController {
         for item in items where item > 50 {
             print("where item > 50:",item)
         }
-        
-        
-        
     }
     
     
