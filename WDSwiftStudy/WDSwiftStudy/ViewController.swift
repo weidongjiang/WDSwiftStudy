@@ -29,7 +29,72 @@ class ViewController: UIViewController {
         demo5()
         demo6()
         demo7()
+        demo8()
     }
+    // MARK: - 集合：数组 字典
+    func demo8() {
+        print("==================== demo8")
+        //数组
+        let array:[Any] = ["ww","ee","rr",13]//不推荐在数组中放不同的元素
+        print(array)
+        
+        let emptyArray = [String]()//实例化空数组
+        print(emptyArray)
+        
+        print("---------------------")
+        
+        var array1 = ["一","二","三","四","五"]
+        // 倒序遍历
+        for str in array1.reversed() {
+            print(str)
+        }
+        print("---------------------")
+        // 数组的增删改查
+        array1.append("qwe")
+        array1.remove(at: 2)
+        array1[1] = "kk"
+        for str in array1 {
+            print(str)
+        }
+        print("---------------------")
+        // 同时遍历 index value
+        for (index,value) in array1.enumerated() {
+            print("index",index,"value",value)
+        }
+        print("---------------------")
+        // 数组合并
+        let arr1:[Any] = ["jj","ll",1]
+        let arr2:[Any] = ["a","b",0]
+        let arr = arr1 + arr2
+        print("数组合并",arr)
+        
+        
+        //字典
+        //初始化
+        let dict:[String:Any] = ["name":"hh","age":"22"]
+        print(dict)
+        var emptyDict = [String:Any]()
+        var dic:[String:Any] = ["name":"hjkh","age":99]
+        print("init",dic)
+        dic["love"] = "jkhs"
+        print("add",dic)
+
+        dic["love"] = "见客户"
+        print("update",dic)
+
+        
+        dic.removeValue(forKey: "age")
+        print("remove",dic)
+
+        for (key,value) in dic {
+            print(key,value)
+        }
+        dic.removeAll()
+        print("removeAll",dic)
+        
+    }
+    
+    
     
     // MARK: - 字符串
     func demo7() {
