@@ -25,7 +25,7 @@ class ViewController: UIViewController {
         demo1()
         demo2()
         demo3()
-        demo4()
+        demo4(a: 22)
     }
     
     // MARK: - view
@@ -96,13 +96,71 @@ class ViewController: UIViewController {
 //        条件语句没有() ，可以写，但不推荐写
 //        分支结构必须有 {}
 //        没有非零即真的概念，只有true 和false
-    func demo4() {
-        let a = 3
+    func demo4(a:Int) {
         if a < 22 {
             print(a,"小于 22")
         }else {
-            print(a,"大于 22")
+            print(a,"大于或等于 22")
         }
+        
+        let urlString = "https://www.jianshu.com/u/5b9953c3d3ad"
+        let url = URL(string: urlString)
+        if url != nil {
+            print(url ?? "nil")
+        }
+        
+        //只有当url2不为空的时候,才会执行里面的代码
+        if let url2 = URL(string: urlString) {
+            print("url2",url2)
+            _ = URLRequest(url: url2)
+        }
+        
+        //不希望guard 能够被穿透
+        //如果url1 为nil 就进入else 分支 会直接return
+        let urlS = "f"
+        guard var url3 = URL(string: urlS) else {
+            print("url is nil")
+            return
+        }
+        
+        var b: Int? = 10
+        var c: Int? = 30
+        b = 9
+        c = 8
+        if b != nil && c != nil  {
+            print(b!,c!)
+        }
+        
+        
+        //guard 可以多个条件判断
+        let d = 9
+        let e = 8
+        guard  d == b, e == c else {
+            print("guard 多个条件")
+            return
+        }
+        
+//        switch
+//        不需要写break
+//        每个匹配项中至少有一段代码可以执行
+//        可以判断任意类型
+//        一次可以匹配多个值
+//        在匹配项中可以声明临时变量,而且不需要加 {} 限制作用域
+        let x = 100
+        switch x {
+        case 100 ,200:
+            print("[100 ,200]")
+        case 201 ,300:
+            print("[201 ,300]")
+        case 301 ,400:
+            print("[301 ,400]")
+        case 401 ,500:
+            print("[401 ,500]")
+        default:
+            print("不在区间")
+        }
+      
+        
         
         
         
