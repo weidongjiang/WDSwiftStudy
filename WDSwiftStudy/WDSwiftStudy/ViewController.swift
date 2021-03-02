@@ -30,7 +30,30 @@ class ViewController: UIViewController {
         demo6()
         demo7()
         demo8()
+        demo9()
     }
+    // MARK: - 条件选择 where
+    func demo9() {
+        print("==================== demo9")
+        let point = (1,1)
+        switch point {
+        case let (x,y) where x == y:
+            print("相等的",x,y)
+            break
+        default:
+            break
+        }
+        
+        let items = [12,2,3,4,6,22,99,100]
+        for item in items where item > 50 {
+            print("where item > 50:",item)
+        }
+        
+        
+        
+    }
+    
+    
     // MARK: - 集合：数组 字典
     func demo8() {
         print("==================== demo8")
