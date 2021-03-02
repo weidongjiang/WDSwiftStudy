@@ -28,7 +28,72 @@ class ViewController: UIViewController {
         demo4(a: 22)
         demo5()
         demo6()
+        demo7()
     }
+    
+    // MARK: - 字符串
+    func demo7() {
+        print("====================")
+        // 打印转换字符串
+        let str:String = "开始学习swift"
+        let NSString_s = str as NSString
+        print(NSString_s)
+        
+        // 字符串长度
+        let len = str.lengthOfBytes(using: .utf8)
+        print(len)
+        
+        let length = str.count
+        print(length)
+        
+        // 遍历字符串
+        for c in str {
+            print(c)
+        }
+        // 字符串拼接
+        let str1 = "好地方少了风"
+        let str2 = "技术落后放入"
+        let str3 = str1 + str2
+        print(str3)
+        
+        print("-----------------")
+        // 字符串转义
+        let name = "老王"
+        let age = 30
+        let str4 = name + String(age)
+        let str5 = name + "\(age)"
+        let str6 = "\(name)\(age)"
+        
+        print(str4)
+        print(str5)
+        print(str6)
+        
+        // 字符串格式化
+        let x = 3
+        let y = 4
+        let z = 6
+        let str7 = String(format: "%02d:%02d:%02d", x,y,z)
+        print(str7)
+        
+        // 字符串截取
+        let str8 = "海口市将恢复了基尔霍夫利润"
+        let start = str8.index(str8.startIndex, offsetBy: 3)
+        let str10 = str8.suffix(3)
+        let str11 = str8.suffix(from: start)
+        let str12 = str8.suffix(4)
+        let str13 = str8.prefix(3)
+
+        print(start)
+        print(str10)
+        print(str11)
+        print(str12)
+        print(str13)
+
+        
+        
+    }
+    
+    
     // MARK: - range区间
     func demo6() {
         print("====================")
@@ -65,7 +130,7 @@ class ViewController: UIViewController {
         }
         print("-----------")
         for item in stride(from: 4, to: tiem, by: margin) {//不包含最后的数据
-            print("stride to",item)
+            print("stride"+"to",item)
         }
         
     }
