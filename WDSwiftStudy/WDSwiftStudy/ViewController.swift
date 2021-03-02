@@ -26,7 +26,81 @@ class ViewController: UIViewController {
         demo2()
         demo3()
         demo4(a: 22)
+        demo5()
     }
+    
+    // MARK: - 循环
+    func demo5() {
+        
+        var num = 50
+        while num > 0 {
+            print(num)
+            num -= 1
+        }
+        
+        //repeat-while相当于OC中的do-while
+        var re = -5
+        repeat {
+            re = re + 1
+            print("repeat",re)
+        }while (re < 0);
+       
+        
+        // for循环
+        let range = 0...10// 0-10包含0和10
+        for i in range {
+            print("for in range",i)
+        }
+        
+        for j in 0...10 {
+            print("for in 0...10",j)
+        }
+        
+        for j in 0..<10 {// 遍历 不包含10
+            print("for in 0..<10",j)
+        }
+        
+        for _ in 0..<10 {// 遍历 不包含10，不使用遍历的index的时候可以使用 _ 代替
+            print("for in 0..<10 😁")
+        }
+    
+        // 遍历数组元素 元素类型可以不一致，最好保持一致的类型
+        let keys = ["a","b","c","d","e","f","j",1] as [Any]
+        for key in keys {
+            print("keys",key)
+        }
+        // 按照区间去遍历
+        for key in keys[0...3] {
+            print("keys[0...3]",key)
+        }
+        print("--------------")
+        for key in keys[0..<3] {
+            print("keys[0..<3]",key)
+        }
+        print("--------------")
+        for key in keys[2...6] {//
+            print("keys[2...6]",key)
+        }
+        print("--------------")
+//        for key in keys[2...10] {//Array index is out of range: file Swift/Array.swift 越界
+//            print("keys[2...6]",key)
+//        }
+        
+        for i in 0...10 {
+            if i == 2 {
+                print("continue")
+                continue
+            }
+            if i > 8 {
+                print("break")
+                break
+            }
+            print("continue break",i)
+        }
+        
+    }
+    
+    
     
     // MARK: - view
     func demo1() {
@@ -89,6 +163,8 @@ class ViewController: UIViewController {
 //        -- 一定要考虑是否安全 一定有值 防患于未然
 //        -- '??' 合并空选项 必须提高 ?? 的优先级
     }
+    
+    
     
     // MARK: - 条件语句
 //        分支结构 if语句
@@ -159,12 +235,6 @@ class ViewController: UIViewController {
         default:
             print("不在区间")
         }
-      
-        
-        
-        
-        
-        
     }
     
 }
