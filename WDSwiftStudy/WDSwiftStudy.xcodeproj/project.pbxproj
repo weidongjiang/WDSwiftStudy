@@ -15,6 +15,9 @@
 		4C36941F25C157220088392C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C36941D25C157220088392C /* LaunchScreen.storyboard */; };
 		4C36942A25C157230088392C /* WDSwiftStudyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C36942925C157230088392C /* WDSwiftStudyTests.swift */; };
 		4C36943525C157230088392C /* WDSwiftStudyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C36943425C157230088392C /* WDSwiftStudyUITests.swift */; };
+		4CC2643025F21D440008EE40 /* WDPerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC2642F25F21D440008EE40 /* WDPerson.swift */; };
+		4CC2643525F220200008EE40 /* WDStudent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC2643425F220200008EE40 /* WDStudent.swift */; };
+		4CC2643A25F220A30008EE40 /* WDDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC2643925F220A30008EE40 /* WDDemo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		4C36943025C157230088392C /* WDSwiftStudyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WDSwiftStudyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C36943425C157230088392C /* WDSwiftStudyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WDSwiftStudyUITests.swift; sourceTree = "<group>"; };
 		4C36943625C157230088392C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4CC2642F25F21D440008EE40 /* WDPerson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WDPerson.swift; sourceTree = "<group>"; };
+		4CC2643425F220200008EE40 /* WDStudent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WDStudent.swift; sourceTree = "<group>"; };
+		4CC2643925F220A30008EE40 /* WDDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WDDemo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +108,9 @@
 				4C36941225C157200088392C /* AppDelegate.swift */,
 				4C36941425C157200088392C /* SceneDelegate.swift */,
 				4C36941625C157200088392C /* ViewController.swift */,
+				4CC2643925F220A30008EE40 /* WDDemo.swift */,
+				4CC2642F25F21D440008EE40 /* WDPerson.swift */,
+				4CC2643425F220200008EE40 /* WDStudent.swift */,
 				4C36941825C157200088392C /* Main.storyboard */,
 				4C36941B25C157220088392C /* Assets.xcassets */,
 				4C36941D25C157220088392C /* LaunchScreen.storyboard */,
@@ -261,6 +270,9 @@
 				4C36941725C157200088392C /* ViewController.swift in Sources */,
 				4C36941325C157200088392C /* AppDelegate.swift in Sources */,
 				4C36941525C157200088392C /* SceneDelegate.swift in Sources */,
+				4CC2643025F21D440008EE40 /* WDPerson.swift in Sources */,
+				4CC2643525F220200008EE40 /* WDStudent.swift in Sources */,
+				4CC2643A25F220A30008EE40 /* WDDemo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

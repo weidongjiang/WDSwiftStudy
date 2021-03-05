@@ -32,6 +32,9 @@ class ViewController: UIViewController {
         demo8()
         demo9()
         demo10()
+        
+        let wdDemo = WDDemo()
+        wdDemo.wdDemo1()
     }
     
     // MARK: - 函数
