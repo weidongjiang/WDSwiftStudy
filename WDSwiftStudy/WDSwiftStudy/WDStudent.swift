@@ -21,4 +21,15 @@ class WDStudent: WDPerson {
         super.init(name: name)
     }
     
+   // setter
+    var ower:String? {
+        didSet {
+            print("didSet",oldValue ?? "default value",ower ?? "default")
+        }
+        willSet {
+            print("willSet",ower ?? "default")
+        }
+    }
+    
+    
 }

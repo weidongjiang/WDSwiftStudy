@@ -31,5 +31,10 @@ class WDPerson: NSObject {
         super.init()
     }
     
+    //getter
+    var height:Int {
+        return 180
+    }
+
     
 }
