@@ -32,4 +32,13 @@ class WDStudent: WDPerson {
     }
     
     
+    // 懒加载
+    lazy var label = UILabel()
+    lazy var button = UIButton()
+    lazy var ageLabel:UILabel = {
+        let l = UILabel()
+        l.text = "jhdl"
+        return l
+    }()
+    
 }
