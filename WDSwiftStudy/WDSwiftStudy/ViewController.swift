@@ -35,6 +35,10 @@ class ViewController: UIViewController {
         
         let wdDemo = WDDemo()
         wdDemo.wdDemo1()
+        
+        let t = WDShareinstace.shareInstace
+        t.name = "jjj"
+        print("WDShareinstace",t.name)
     }
     
     // MARK: - 函数

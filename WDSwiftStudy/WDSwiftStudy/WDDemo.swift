@@ -23,6 +23,14 @@ class WDDemo: NSObject {
         
         
     }
-    
-    
+}
+
+// 单利
+public class WDShareinstace:NSObject {
+    var name:String
+    public static let shareInstace = WDShareinstace()
+    private override init() {
+        self.name = "kk"
+        super.init()
+    }
 }
