@@ -14,7 +14,8 @@ class WDTypedOrRawPointer: NSObject {
     func wdTypedOrRawPointer() {
         rUnsafeMutableRawPointer()
         rUnsafeMutableRawPointer_1()
-        changeValue_withUnsafePointer()
+        _withUnsafePointer()
+        changeValue()
     }
     
     func rUnsafeMutableRawPointer(){
@@ -67,22 +68,49 @@ class WDTypedOrRawPointer: NSObject {
 
 extension WDTypedOrRawPointer {
     // 获取基本数据类型的地址 方式
-    func changeValue_withUnsafePointer()  {
+    func _withUnsafePointer()  {
         var age = 10
         //    <!--使用1-->
         let p = withUnsafePointer(to: &age) { $0 }
-        print("changeValue p",p)
+        print("_withUnsafePointer p",p)
         
         //    <!--使用2-->
-        withUnsafePointer(to: &age){print("changeValue $0",$0)}
+        withUnsafePointer(to: &age){print("_withUnsafePointer $0",$0)}
         
         //    <!--使用3-->
         //其中p1的类型是 UnsafePointer<Int>
         let p1 = withUnsafePointer(to: &age) { ptr in
             return ptr
         }
-        print("changeValue p1",p1)
+        print("_withUnsafePointer p1",p1)//指针地址
+        print("_withUnsafePointer p1 pointee",p1.pointee)// 指针对应的值
     }
     
-    
+    //改变变量值的方式有两种，一种是间接修改，一种是直接修改
+    func changeValue()  {
+        //间接方式
+        var age = 11
+        age = withUnsafePointer(to: &age, { ptr in
+            return ptr.pointee + 11
+        })
+        print("changeValue age :",age)
+        
+        // 直接修改1
+        withUnsafeMutablePointer(to: &age) { ptr in
+            ptr.pointee += 100
+        }
+        print("changeValue age1 :",age)
+        
+        // 直接修改2
+        // 分配容量大小 8字节
+        let ptr = UnsafeMutablePointer<Int>.allocate(capacity: 1)
+        // 初始化
+        ptr.initialize(to: age)
+        ptr.deinitialize(count: 1)
+        
+        ptr.pointee = 1000 + ptr.pointee
+        print("changeValue age2 :",ptr.pointee)
+        // 销毁
+        ptr.deallocate()
+    }
 }
