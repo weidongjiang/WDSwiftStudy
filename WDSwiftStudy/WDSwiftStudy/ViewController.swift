@@ -35,6 +35,8 @@ class ViewController: UIViewController {
         
         let wdDemo = WDDemo()
         wdDemo.wdDemo1()
+        let age_1 = wdDemo.addExtensionFunc(age: 10)
+        print("addExtensionFunc \(age_1)")
         
         let t = WDShareinstace.shareInstace
         t.name = "jjj"

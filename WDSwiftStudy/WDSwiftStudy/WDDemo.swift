@@ -23,7 +23,34 @@ class WDDemo: NSObject {
         
         
     }
+    
+    deinit {// 当该类即将被销毁是调用此方法
+        
+    }
+    
+    
+    enum Suit {
+        case spades,hearts,diamods,clubs
+        
+        func simpleDescription() -> String {
+            switch self {
+            case .spades:
+                return "spades"
+            case .hearts:
+                return "hearts"
+            case .diamods:
+                return "diamods"
+            case .clubs:
+                return "clubs"
+            }
+        }
+    }
+    let heart = Suit.spades
+//    let description = heart.simpleDescription()
+    
 }
+
+
 
 // 单利
 public class WDShareinstace:NSObject {
@@ -32,5 +59,19 @@ public class WDShareinstace:NSObject {
     private override init() {
         self.name = "kk"
         super.init()
+    }
+}
+
+
+public protocol optionalType {
+    associatedtype Wrapped
+    var value:Wrapped?{get}
+    
+}
+
+
+extension WDDemo {
+    func addExtensionFunc(age:Int) -> Int {
+        return age + 10
     }
 }
