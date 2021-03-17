@@ -68,8 +68,8 @@ class WDTypedOrRawPointer: NSObject {
 }
 
 
+// MARK: - // 获取基本数据类型的地址 方式
 extension WDTypedOrRawPointer {
-    // 获取基本数据类型的地址 方式
     func _withUnsafePointer()  {
         var age = 10
         //    <!--使用1-->
@@ -118,7 +118,7 @@ extension WDTypedOrRawPointer {
 }
 
 
-//访问结构体实例对象
+// MARK: - //访问结构体实例对象
 extension WDTypedOrRawPointer {
     struct WDTeacher {
         var age = 20
@@ -178,6 +178,7 @@ class WDTeacherClass: NSObject {
     var age_1 = 18
     
 }
+// MARK: - 类的实例对象如何绑定到 结构体内存中？
 extension WDTypedOrRawPointer {
 //    类的实例对象如何绑定到 结构体内存中？
 //
@@ -207,6 +208,12 @@ extension WDTypedOrRawPointer {
         print("addClassToStruct heapObject.pointee.kind ",heapObject.pointee.kind)
         print("addClassToStruct heapObject.pointee.strongRef ",heapObject.pointee.strongRef)
         print("addClassToStruct heapObject.pointee.unownedRef ",heapObject.pointee.unownedRef)
+        
+        
+        //绑定到类结构
+        let metaPtr = heapObject.pointee.kind.bindMemory(to: cjl_swift_class.self, capacity: 1)
+        print("addClassToStruct metaPtr.pointee ",metaPtr.pointee)
+        
     }
     
 //    create\copy 需要使用retain
@@ -216,3 +223,23 @@ extension WDTypedOrRawPointer {
 //    将kind的类型改成UnsafeRawPointer，kind的输出就是地址了
     
 }
+
+
+// MARK: - //绑定到类结构
+struct cjl_swift_class {
+    var kind: UnsafeRawPointer
+    var superClass: UnsafeRawPointer
+    var cachedata1: UnsafeRawPointer
+    var cachedata2: UnsafeRawPointer
+    var data: UnsafeRawPointer
+    var flags: UInt32
+    var instanceAddressOffset: UInt32
+    var instanceSize: UInt32
+    var flinstanceAlignMask: UInt16
+    var reserved: UInt16
+    var classSize: UInt32
+    var classAddressOffset: UInt32
+    var description: UnsafeRawPointer
+}
+
+
