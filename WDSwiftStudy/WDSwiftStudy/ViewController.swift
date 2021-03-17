@@ -41,6 +41,10 @@ class ViewController: UIViewController {
         let t = WDShareinstace.shareInstace
         t.name = "jjj"
         print("WDShareinstace",t.name)
+        
+        print("==================== WDTypedOrRawPointer")
+        let pointer = WDTypedOrRawPointer()
+        pointer.wdTypedOrRawPointer()
     }
     
     // MARK: - 函数
