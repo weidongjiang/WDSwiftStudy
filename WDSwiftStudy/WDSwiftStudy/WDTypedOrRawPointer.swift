@@ -6,6 +6,13 @@
 //
 
 // 指针
+//指针类型分两种
+//typed pointer 指定数据类型指针，即 UnsafePointer<T> + unsafeMutablePointer
+//raw pointer 未指定数据类型的指针（原生指针） ，即UnsafeRawPointer + unsafeMutableRawPointer
+//withMemoryRebound: 临时更改内存绑定类型
+//bindMemory(to: Capacity:): 更改内存绑定的类型，如果之前没有绑定，那么就是首次绑定，如果绑定过了，会被重新绑定为该类型
+//assumingMemoryBound假定内存绑定，这里就是告诉编译器：我的类型就是这个，你不要检查我了,其实际类型还是原来的类型
+
 
 import Foundation
 
@@ -18,6 +25,7 @@ class WDTypedOrRawPointer: NSObject {
         changeValue()
         test()
         addClassToStruct()
+//        testPointer()
     }
     
     func rUnsafeMutableRawPointer(){
@@ -65,6 +73,10 @@ class WDTypedOrRawPointer: NSObject {
 //        index:2,value:3
 //        index:3,value:4
     }
+    
+
+    
+    
 }
 
 
@@ -243,3 +255,33 @@ struct cjl_swift_class {
 }
 
 
+// MARK: - 元组指针类型转换
+extension WDTypedOrRawPointer {
+    
+    func testPointer(_ p : UnsafePointer<Int>)  {
+//        var tul = (10,20)
+        
+        print("testPointer p",p)
+        
+    }
+}
+
+
+// MARK: - 如何获取结构体的属性的指针
+//struct HeapObject {
+//        var strongRef: UInt32 = 10
+//        var unownedRef: UInt32 = 20
+//    }
+//
+//    func testPointer(_ p: UnsafePointer<Int>){
+//       print(p)
+//    }
+//    //实例化
+//    var  t_2 = HeapObject()
+//    //获取结构体属性的指针传入函数
+//    withUnsafePointer(to: &t_2) { (ptr1: UnsafePointer<HeapObject>) in
+//        //获取变量
+//        let strongRef = UnsafeRawPointer(ptr) + MemoryLayout<HeapObject>.offset(of: \HeapObject.strongRef)!
+//        //传递strongRef属性的值
+//        testPointer(strongRef.assumingMemoryBound(to: Int.self))
+//    }
