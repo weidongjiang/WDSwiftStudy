@@ -17,6 +17,7 @@ class WDTypedOrRawPointer: NSObject {
         _withUnsafePointer()
         changeValue()
         test()
+        addClassToStruct()
     }
     
     func rUnsafeMutableRawPointer(){
@@ -165,4 +166,53 @@ extension WDTypedOrRawPointer {
 //        这里的ptr如果使用advanced(by: MemoryLayout<WDTeacher>.stride)即16*16字节大小，此时获取的结果是有问题的，由于这里知道具体的类型，所以只需要标识指针前进 几步即可，即advanced(by: 1)
 
     }
+}
+
+struct HeapObject {
+//    var kind : Int
+    var kind : UnsafeRawPointer
+    var strongRef: UInt32
+    var unownedRef: UInt32
+}
+class WDTeacherClass: NSObject {
+    var age_1 = 18
+    
+}
+extension WDTypedOrRawPointer {
+//    类的实例对象如何绑定到 结构体内存中？
+//
+//    1、获取实例变量的内存地址
+//    2、绑定到结构体内存,返回值是UnsafeMutablePointer<T>
+//    3、访问成员变量 pointee.kind
+    func addClassToStruct()  {
+        var t = WDTeacherClass()
+        //将t绑定到结构体内存中
+        //1、获取实例变量的内存地址，声明成了非托管对象
+        /*
+         通过Unmanaged指定内存管理，类似于OC与CF的交互方式（所有权的转换 __bridge）
+         - passUnretained 不增加引用计数，即不需要获取所有权
+         - passRetained 增加引用计数，即需要获取所有权
+         - toOpaque 不透明的指针
+         */
+
+        let ptr = Unmanaged.passUnretained(t as AnyObject).toOpaque()
+        //2、绑定到结构体内存,返回值是UnsafeMutablePointer<T>
+        /*
+         - bindMemory 更改当前 UnsafeMutableRawPointer 的指针类型，绑定到具体的类型值
+            - 如果没有绑定，则绑定
+            - 如果已经绑定，则重定向到 HeapObject类型上
+         */
+        let heapObject = ptr.bindMemory(to: HeapObject.self, capacity: 1)
+        //3、访问成员变量
+        print("addClassToStruct heapObject.pointee.kind ",heapObject.pointee.kind)
+        print("addClassToStruct heapObject.pointee.strongRef ",heapObject.pointee.strongRef)
+        print("addClassToStruct heapObject.pointee.unownedRef ",heapObject.pointee.unownedRef)
+    }
+    
+//    create\copy 需要使用retain
+//
+//    不需要获取所有权 使用unretain
+//
+//    将kind的类型改成UnsafeRawPointer，kind的输出就是地址了
+    
 }
