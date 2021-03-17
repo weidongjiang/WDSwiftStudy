@@ -16,6 +16,7 @@ class WDTypedOrRawPointer: NSObject {
         rUnsafeMutableRawPointer_1()
         _withUnsafePointer()
         changeValue()
+        test()
     }
     
     func rUnsafeMutableRawPointer(){
@@ -112,5 +113,56 @@ extension WDTypedOrRawPointer {
         print("changeValue age2 :",ptr.pointee)
         // 销毁
         ptr.deallocate()
+    }
+}
+
+
+//访问结构体实例对象
+extension WDTypedOrRawPointer {
+    struct WDTeacher {
+        var age = 20
+        var height = 1.88
+    }
+//    使用UnsafeMutablePointer创建指针，并通过指针访问WDTeacher实例对象，有以下三种方式：
+//    方式一：下标访问
+//    方式二：内存平移
+//    方式三：successor
+    func test() {
+        //分配两个WDTeacher大小的空间
+        let ptr = UnsafeMutablePointer<WDTeacher>.allocate(capacity: 2)
+        // 初始化第一个空间
+        ptr.initialize(to: WDTeacher())
+        // 移动 初始化第二个空间
+        ptr.successor().initialize(to: WDTeacher(age: 30, height: 1.75))
+        // 访问方式1
+        print("struct WDTeacher 1:",ptr[0])
+        print("struct WDTeacher 1:",ptr[1])
+        
+        // 访问方式2
+        print("struct WDTeacher 2: ptr.pointee",ptr.pointee)
+        print("struct WDTeacher 2: ptr.pointee",ptr.successor().pointee)
+
+        // 访问方式3
+        print("struct WDTeacher 3:",ptr.pointee)
+        print("struct WDTeacher 3:",(ptr+1).pointee)
+        
+//        需要注意的是，第二个空间的初始化不能通过advanced(by: MemoryLayout<CJLTeacher>.stride)去访问，否则取出结果是有问题
+//        可以通过ptr + 1或者successor() 或者advanced(by: 1)
+//        <!--第2个初始化 方式一-->
+        (ptr + 1).initialize(to: WDTeacher(age: 21, height: 1.75))
+        print("struct WDTeacher 4:",ptr.pointee)
+        print("struct WDTeacher 4:",(ptr+1).pointee)
+        
+//        <!--第2个初始化 方式二-->
+        ptr.successor().initialize(to: WDTeacher(age: 22, height: 1.75))
+        print("struct WDTeacher 5:",ptr.pointee)
+        print("struct WDTeacher 5:",(ptr+1).pointee)
+//        <!--第2个初始化 方式三-->
+        ptr.advanced(by: 1).initialize(to:  WDTeacher(age: 23, height: 1.75))
+        print("struct WDTeacher 6:",ptr.pointee)
+        print("struct WDTeacher 6:",(ptr+1).pointee)
+        
+//        这里的ptr如果使用advanced(by: MemoryLayout<WDTeacher>.stride)即16*16字节大小，此时获取的结果是有问题的，由于这里知道具体的类型，所以只需要标识指针前进 几步即可，即advanced(by: 1)
+
     }
 }
