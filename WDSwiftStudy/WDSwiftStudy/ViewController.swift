@@ -45,6 +45,9 @@ class ViewController: UIViewController {
         print("==================== WDTypedOrRawPointer")
         let pointer = WDTypedOrRawPointer()
         pointer.wdTypedOrRawPointer()
+        
+        let wdMirrorDemo = WDMirror()
+        wdMirrorDemo.wdMirrorDemo()
     }
     
     // MARK: - 函数
