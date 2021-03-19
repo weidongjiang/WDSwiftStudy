@@ -18,6 +18,10 @@ class WDMirror: NSObject {
         let teacher = WDMirrorTeacher()
         let json = jsonTest(teacher)
         print("WDMirror jsonTest",json)
+        
+        
+        print("================== WDMirror wdMirrorJosnMapTest")
+        wdMirrorJosnMapTest()
     }
     
 }
@@ -56,7 +60,6 @@ extension WDMirror {
 
 
 // MARK: - json解析
-
 extension WDMirror {
     func jsonTest(_ objc:Any) -> Any {
         let mirror = Mirror(reflecting: objc)
@@ -64,7 +67,6 @@ extension WDMirror {
         guard !mirror.children.isEmpty else {
             return objc
         }
-        
         // 字段
         var keyValue:[String:Any] = [:]
         for children in mirror.children {
@@ -75,9 +77,22 @@ extension WDMirror {
                 print("children.label nil")
             }
         }
-
         return keyValue
-        
     }
 }
 
+
+
+
+class WDMirrorJosnMapTeacher: WDMirrorJosnMap {
+    var name = "WDMirrorJosnMap"
+    var age = 99
+    var height = 1.88
+}
+extension WDMirror {
+    func wdMirrorJosnMapTest() {
+        let te = WDMirrorJosnMapTeacher()
+        let json_te = te.jsonMap()
+        print("WDMirror wdMirrorJosnMapTest json:",json_te)
+    }
+}
