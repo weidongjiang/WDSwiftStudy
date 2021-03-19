@@ -35,6 +35,25 @@ extension JSONMapError: LocalizedError {
     }
 }
 
+extension JSONMapError: CustomNSError {
+    static var errorDomain: String {
+        return "errorDomain"
+    }
+    
+    var errorCode: Int {
+        switch self {
+        case .emptyKey:
+            return 404
+        case .noConformProtocol:
+            return 504
+        }
+    }
+    
+    var errorUserInfo: [String : Any] {
+        return ["errorUserInfo":"errorInfo"]
+    }
+}
+
 protocol WDMirrorJosnMap {
     func jsonMap() throws -> Any
 }
@@ -130,3 +149,19 @@ public protocol LocalizedError : Error {
     /// A localized message providing "help" text if the user requests help.帮助
     var helpAnchor: String? { get }
 }
+
+
+// MARK: - CustomNSError协议
+//CustomNSError相当于OC中的NSError，其定义如下，有三个默认属性
+public protocol CustomNSError : Error {
+
+    /// The domain of the error.
+    static var errorDomain: String { get }
+
+    /// The error code within the given domain.
+    var errorCode: Int { get }
+
+    /// The user-info dictionary.
+    var errorUserInfo: [String : Any] { get }
+}
+
