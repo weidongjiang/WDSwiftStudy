@@ -104,6 +104,8 @@ extension WDMirror {
             print("WDMirrorJosnMapTeacher json:",json)
         }catch {
             print("WDMirrorJosnMapTeacher nil")
+            print("WDMirrorJosnMapTeacher error",error.localizedDescription)//DMirrorJosnMapTeacher error The operation couldn’t be completed. (WDSwiftStudy.JSONMapError error 1.)
+            
         }
         
     }

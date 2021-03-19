@@ -7,9 +7,32 @@
 
 import Foundation
 
-enum JSONMaoError:Error {
+enum JSONMapError:Error {
     case emptyKey
     case noConformProtocol
+}
+
+extension JSONMapError: LocalizedError {
+    var failureReason: String? {
+        return "解析失败"
+    }
+    
+    var recoverySuggestion: String? {
+        return "建议检查 key 是否为空"
+    }
+    
+    var helpAnchor: String? {
+        return "help"
+    }
+    
+    var errorDescription: String? {
+        switch self {
+        case .emptyKey:
+            return "key为空"
+        case .noConformProtocol:
+            return "没有遵守协议"
+        }
+    }
 }
 
 protocol WDMirrorJosnMap {
@@ -19,7 +42,7 @@ protocol WDMirrorJosnMap {
 extension Int:WDMirrorJosnMap{}
 extension String:WDMirrorJosnMap{}
 extension Float:WDMirrorJosnMap{}
-extension Double:WDMirrorJosnMap{}
+//extension Double:WDMirrorJosnMap{}
 
 extension WDMirrorJosnMap {
     func jsonMap() throws -> Any {
@@ -39,12 +62,12 @@ extension WDMirrorJosnMap {
                 }else {
                     print("key is nil")
 //                    return JSONMaoError.emptyKey
-                    throw JSONMaoError.emptyKey // 区分是异常还是json
+                    throw JSONMapError.emptyKey // 区分是异常还是json
                 }
             }else {
                 print("没有遵守 WDMirrorJosnMap 协议")
 //                return JSONMaoError.noConformProtocol
-                throw JSONMaoError.noConformProtocol
+                throw JSONMapError.noConformProtocol
             }
         }
         return keyValue
@@ -91,4 +114,19 @@ try! 表示你对这段代码有绝对的自信，这行代码绝对不会发生
 */
 
 
+// MARK: - LocalError协议
+//如果只是用Error还不足以表达更详尽的错误信息，可以使用LocalizedError协议，其定义如下
+public protocol LocalizedError : Error {
 
+    /// A localized message describing what error occurred.错误描述
+    var errorDescription: String? { get }
+
+    /// A localized message describing the reason for the failure.失败原因
+    var failureReason: String? { get }
+
+    /// A localized message describing how one might recover from the failure.建议
+    var recoverySuggestion: String? { get }
+
+    /// A localized message providing "help" text if the user requests help.帮助
+    var helpAnchor: String? { get }
+}
