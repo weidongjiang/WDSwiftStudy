@@ -7,9 +7,13 @@
 
 import Foundation
 
+enum JSONMaoError:Error {
+    case emptyKey
+    case noConformProtocol
+}
 
 protocol WDMirrorJosnMap {
-    func jsonMap() -> Any
+    func jsonMap() throws -> Any
 }
 //【问题】：运行代码发现，并不是我们想要的结果,原因是因为CJLTeacher中属性的类型也需要遵守WDMirrorJosnMap协议
 extension Int:WDMirrorJosnMap{}
@@ -18,7 +22,7 @@ extension Float:WDMirrorJosnMap{}
 extension Double:WDMirrorJosnMap{}
 
 extension WDMirrorJosnMap {
-    func jsonMap() -> Any {
+    func jsonMap() throws -> Any {
         let mirror = Mirror(reflecting: self)
         
         // 递归终止
@@ -31,14 +35,37 @@ extension WDMirrorJosnMap {
         for children in mirror.children {
             if let value = children.value as? WDMirrorJosnMap {
                 if let keyName = children.label {
-                    keyValue[keyName] = value.jsonMap()
+                    keyValue[keyName] = try value.jsonMap()
                 }else {
                     print("key is nil")
+//                    return JSONMaoError.emptyKey
+                    throw JSONMaoError.emptyKey // 区分是异常还是json
                 }
             }else {
                 print("没有遵守 WDMirrorJosnMap 协议")
+//                return JSONMaoError.noConformProtocol
+                throw JSONMaoError.noConformProtocol
             }
         }
         return keyValue
     }
 }
+
+
+// 错误处理
+/*
+为了让我们自己封装的JSON解析更好用，除了对正常返回的处理，还需要对其中的错误进行处理，在上面的封装中，我们目前采用的是print打印的，这样并不规范，也不好维护及管理。那么如何在swift中正确的表达错误呢？
+public protocol Error {
+}
+Error是一个空协议，其中没有任何实现，这也就意味着你可以遵守该协议，然后自定义错误类型。所以不管是我们的struct、Class、enum，我们都可以遵循这个Error来表示一个错误
+
+ //定义错误类型
+ enum JSONMapError: Error{
+     case emptyKey
+     case notConformProtocol
+ }
+ 
+ 但是这里有一个问题，jsonMap方法的返回值是Any，我们无法区分返回的是错误还是json数据，那么该如何区分呢？即如何抛出错误呢？在这里可以通过throw关键字（即将Demo中原本return的错误，改成throw抛出）
+
+ 
+ */

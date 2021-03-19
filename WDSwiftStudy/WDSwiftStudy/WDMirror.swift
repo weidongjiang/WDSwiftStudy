@@ -92,7 +92,8 @@ class WDMirrorJosnMapTeacher: WDMirrorJosnMap {
 extension WDMirror {
     func wdMirrorJosnMapTest() {
         let te = WDMirrorJosnMapTeacher()
-        let json_te = te.jsonMap()
-        print("WDMirror wdMirrorJosnMapTest json:",json_te)
+        let json_te = try? te.jsonMap()
+//        Errors thrown from here are not handled 解决 添加？
+        print("WDMirror wdMirrorJosnMapTest json:",json_te ?? nil)
     }
 }
