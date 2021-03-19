@@ -95,5 +95,16 @@ extension WDMirror {
         let json_te = try? te.jsonMap()
 //        Errors thrown from here are not handled 解决 添加？
         print("WDMirror wdMirrorJosnMapTest json:",json_te ?? nil)
+        
+        
+        //通过do-catch来处理JSON解析的错误
+        let assd = WDMirrorJosnMapTeacher()
+        do {
+            let json = try assd.jsonMap();
+            print("WDMirrorJosnMapTeacher json:",json)
+        }catch {
+            print("WDMirrorJosnMapTeacher nil")
+        }
+        
     }
 }
