@@ -80,12 +80,10 @@ extension WDMirrorJosnMap {
                     keyValue[keyName] = try value.jsonMap()
                 }else {
                     print("key is nil")
-//                    return JSONMaoError.emptyKey
                     throw JSONMapError.emptyKey // 区分是异常还是json
                 }
             }else {
                 print("没有遵守 WDMirrorJosnMap 协议")
-//                return JSONMaoError.noConformProtocol
                 throw JSONMapError.noConformProtocol
             }
         }
@@ -165,3 +163,17 @@ public protocol CustomNSError : Error {
     var errorUserInfo: [String : Any] { get }
 }
 
+/*
+
+总结
+Error是swift中错误类型的基本协议，其中LocalizedError、CustomNSError都遵守Error
+
+如果在方法中，想要同时返回正常值和错误，需要通过throw返回错误，并且在方法返回值的箭头前面加throws关键字，再调用方法时，还需要加上try关键字，或者使用do-catch，使用try时，有以下两点需要注意：
+
+try? 返回的是一个可选类型，要么成功，返回正常值，要么失败，返回nil
+
+try! 表示你对自己的代码非常自信，绝对不会发生错误，一旦发生错误，就会崩溃
+
+使用建议：建议使用try?，而不是try!
+
+ */
