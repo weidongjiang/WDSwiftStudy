@@ -6,6 +6,20 @@
 	objectVersion = 50;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		4C99968B2609D8EC0087ED00 /* WDScript */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 4C99968C2609D8EC0087ED00 /* Build configuration list for PBXAggregateTarget "WDScript" */;
+			buildPhases = (
+				4C9996932609D8FE0087ED00 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = WDScript;
+			productName = WDScript;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		4C36941325C157200088392C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C36941225C157200088392C /* AppDelegate.swift */; };
 		4C36941525C157200088392C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C36941425C157200088392C /* SceneDelegate.swift */; };
@@ -18,6 +32,7 @@
 		4C8636002601DD8C0021DA76 /* WDTypedOrRawPointer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8635FF2601DD8C0021DA76 /* WDTypedOrRawPointer.swift */; };
 		4C863605260328DD0021DA76 /* WDMirror.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C863604260328DD0021DA76 /* WDMirror.swift */; };
 		4C863613260335850021DA76 /* WDMirrorJosnMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C863612260335850021DA76 /* WDMirrorJosnMap.swift */; };
+		4C9996862604B2740087ED00 /* WDEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9996852604B2740087ED00 /* WDEnum.swift */; };
 		4CC2643025F21D440008EE40 /* WDPerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC2642F25F21D440008EE40 /* WDPerson.swift */; };
 		4CC2643525F220200008EE40 /* WDStudent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC2643425F220200008EE40 /* WDStudent.swift */; };
 		4CC2643A25F220A30008EE40 /* WDDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC2643925F220A30008EE40 /* WDDemo.swift */; };
@@ -58,6 +73,7 @@
 		4C8635FF2601DD8C0021DA76 /* WDTypedOrRawPointer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WDTypedOrRawPointer.swift; sourceTree = "<group>"; };
 		4C863604260328DD0021DA76 /* WDMirror.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WDMirror.swift; sourceTree = "<group>"; };
 		4C863612260335850021DA76 /* WDMirrorJosnMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WDMirrorJosnMap.swift; sourceTree = "<group>"; };
+		4C9996852604B2740087ED00 /* WDEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WDEnum.swift; sourceTree = "<group>"; };
 		4CC2642F25F21D440008EE40 /* WDPerson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WDPerson.swift; sourceTree = "<group>"; };
 		4CC2643425F220200008EE40 /* WDStudent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WDStudent.swift; sourceTree = "<group>"; };
 		4CC2643925F220A30008EE40 /* WDDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WDDemo.swift; sourceTree = "<group>"; };
@@ -120,6 +136,7 @@
 				4C8635FF2601DD8C0021DA76 /* WDTypedOrRawPointer.swift */,
 				4C863604260328DD0021DA76 /* WDMirror.swift */,
 				4C863612260335850021DA76 /* WDMirrorJosnMap.swift */,
+				4C9996852604B2740087ED00 /* WDEnum.swift */,
 				4C36941825C157200088392C /* Main.storyboard */,
 				4C36941B25C157220088392C /* Assets.xcassets */,
 				4C36941D25C157220088392C /* LaunchScreen.storyboard */,
@@ -222,6 +239,9 @@
 						CreatedOnToolsVersion = 12.1;
 						TestTargetID = 4C36940E25C157200088392C;
 					};
+					4C99968B2609D8EC0087ED00 = {
+						CreatedOnToolsVersion = 12.1;
+					};
 				};
 			};
 			buildConfigurationList = 4C36940A25C1571F0088392C /* Build configuration list for PBXProject "WDSwiftStudy" */;
@@ -240,6 +260,7 @@
 				4C36940E25C157200088392C /* WDSwiftStudy */,
 				4C36942425C157230088392C /* WDSwiftStudyTests */,
 				4C36942F25C157230088392C /* WDSwiftStudyUITests */,
+				4C99968B2609D8EC0087ED00 /* WDScript */,
 			);
 		};
 /* End PBXProject section */
@@ -271,6 +292,26 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4C9996932609D8FE0087ED00 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nswiftc -emit-sil ${SRCROOT}/06、WDSwiftStudy/WDEnum.swift | xcrun swift-demangle > ./WDEnum.sil && code WDEnum.sil\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4C36940B25C157200088392C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -279,6 +320,7 @@
 				4C8636002601DD8C0021DA76 /* WDTypedOrRawPointer.swift in Sources */,
 				4C36941725C157200088392C /* ViewController.swift in Sources */,
 				4C36941325C157200088392C /* AppDelegate.swift in Sources */,
+				4C9996862604B2740087ED00 /* WDEnum.swift in Sources */,
 				4C36941525C157200088392C /* SceneDelegate.swift in Sources */,
 				4CC2643025F21D440008EE40 /* WDPerson.swift in Sources */,
 				4CC2643525F220200008EE40 /* WDStudent.swift in Sources */,
@@ -579,6 +621,24 @@
 			};
 			name = Release;
 		};
+		4C99968D2609D8EC0087ED00 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3ZPP94SLYH;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		4C99968E2609D8EC0087ED00 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3ZPP94SLYH;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -614,6 +674,15 @@
 			buildConfigurations = (
 				4C36944025C157230088392C /* Debug */,
 				4C36944125C157230088392C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4C99968C2609D8EC0087ED00 /* Build configuration list for PBXAggregateTarget "WDScript" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C99968D2609D8EC0087ED00 /* Debug */,
+				4C99968E2609D8EC0087ED00 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
