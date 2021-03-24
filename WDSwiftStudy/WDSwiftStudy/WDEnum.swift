@@ -53,6 +53,11 @@ class WDEnum: NSObject {
         enumTest_2()
         enumTest_init()
         printEnum()
+        enumTest_Shap()
+        enumTest_current()
+        enumTest_shap()
+        enumCombineDirect()
+        enumTestnextDay()
     }
     
     func enumTest_1() {
@@ -137,12 +142,12 @@ class WDEnum: NSObject {
      
      */
 }
+
+// MARK: -  枚举的遍历
 public enum Weak_5: String {
     case MON,TUE,WED,THU,FRI,SAT,SUN
 }
 extension Weak_5: CaseIterable{}
-
-// MARK: -  枚举的遍历
 extension WDEnum {
     func printEnum() {
         let AllCases = Weak_5.allCases
@@ -168,4 +173,167 @@ extension WDEnum {
 
     }
     
+}
+
+// MARK: - 枚举 关联值
+extension WDEnum {
+    
+    
+//    func circle(radius:Double) -> Double {
+//        return radius*radius*3.14
+//    }
+//    func rectangle(width:Int,height:Int)  {
+//        print("")
+//    }
+//
+    enum Shap {
+        //    注：具有关联值的枚举，就没有rawValue属性了，主要是因为一个case可以用一个或者多个值来表示，而rawValue只有单个的值
+        case circle(radius:Double)
+        case rectangle(width:Int,height:Int)
+    }
+    func enumTest_Shap() {
+        let sh = Shap.circle(radius: 10)
+        let sh_1 = Shap.rectangle(width: 2, height: 3)
+
+        print("WDEnum enumTest_Shap : \(sh) , \(sh_1)")
+        
+    }
+    
+}
+
+
+// MARK: - 模式匹配
+extension WDEnum {
+    enum Weak_6:String {
+        case MON
+        case TUE
+        case WED
+        case THU
+        case FRI
+        case SAT
+        case SUN
+    }
+    
+    func enumTest_current() {
+        let current = Weak_6(rawValue: "SUN")
+        switch current {
+        case .MON:
+            do {
+                print(Weak_6.MON)
+            }
+        case .TUE:
+            do {
+                print(Weak_6.MON)
+            }
+        case .WED:
+            do {
+                print(Weak_6.MON)
+            }
+        default:
+            print("unknow day")
+        }
+    }
+    
+    
+    func enumTest_shap() {
+        enum Shape{
+            case circle(radius: Double)
+            case rectangle(width: Int, height: Int)
+        }
+        
+        let shape_test = Shape.circle(radius: 10.0)
+        switch shape_test{
+        //相当于将10.0赋值给了声明的radius常量
+        case let .circle(radius):
+            print("circle radius: \(radius)")
+        case let .rectangle(width, height):
+            print("rectangle width: \(width) height: \(height)")
+        }
+    }
+}
+
+
+// MARK: - 枚举的嵌套
+/*
+枚举的嵌套主要用于以下场景：
+
+1、【枚举嵌套枚举】一个复杂枚举是由一个或多个枚举组成
+
+2、【结构体嵌套枚举】enum是不对外公开的，即是私有的
+*/
+extension WDEnum {
+    enum CombineDirect {
+        enum BaseDirect {
+            case up
+            case down
+            case left
+            case right
+        }
+        case leftUp(BaseDirect1:BaseDirect,BaseDirect2:BaseDirect)
+        case leftDown(BaseDirect1:BaseDirect,BaseDirect2:BaseDirect)
+        case rightUp(BaseDirect1:BaseDirect,BaseDirect2:BaseDirect)
+        case rightDown(BaseDirect1:BaseDirect,BaseDirect2:BaseDirect)
+    }
+    func enumCombineDirect() {
+        let en = CombineDirect.leftUp(BaseDirect1: CombineDirect.BaseDirect.left, BaseDirect2: CombineDirect.BaseDirect.down)
+        print("WDEnum enumCombineDirect",en)
+        
+        switch en {
+        case .leftUp(BaseDirect1: CombineDirect.BaseDirect.left, BaseDirect2: CombineDirect.BaseDirect.down) :
+            print("WDEnum enumCombineDirect left up")
+        case .rightUp(BaseDirect1: CombineDirect.BaseDirect.left, BaseDirect2: CombineDirect.BaseDirect.down) :
+            print("WDEnum enumCombineDirect right up")
+        default:
+        print("")
+        }
+    }
+    
+//    枚举中包含属性
+//    enum中只能包含计算属性、类型属性，不能包含存储属性
+    
+    enum Shape{
+        case circle(radius: Double)
+        case rectangle(width: Double, height: Double)
+        
+        //编译器报错：Enums must not contain stored properties 不能包含存储属性，因为enum本身是值类型
+    //    var radius: Double
+        
+        //计算属性 - 本质是方法（get、set方法）
+        var with: Double{
+            get{
+                return 10.0
+            }
+        }
+        //类型属性 - 是一个全局变量
+        static let height = 20.0
+    }
+//    为什么struct中可以放存储属性，而enum不可以？
+//
+//    主要是因为struct中可以包含存储属性是因为其大小就是存储属性的大小。而对enum来说就是不一样的（请查阅后文的enum大小讲解），enum枚举的大小是取决于case的个数的，如果没有超过255，enum的大小就是1字节（8位）
+
+    
+}
+
+extension WDEnum {
+    
+    //    枚举中包含方法
+    //    可以在enum中定义实例方法、static修饰的方法
+    enum Weak_7: Int{
+        case MON, TUE, WED, THU, FRI, SAT, SUN
+        
+        mutating func nextDay(){
+            if self == .SUN{
+                self = Weak_7(rawValue: 0)!
+            }else{
+                self = Weak_7(rawValue: self.rawValue+1)!
+            }
+        }
+    }
+    func enumTestnextDay() {
+        
+        //    <!--使用-->
+            var w = Weak_7.MON
+            w.nextDay()
+            print(w)
+    }
 }
