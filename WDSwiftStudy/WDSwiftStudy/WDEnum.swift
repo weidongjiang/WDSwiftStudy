@@ -330,10 +330,107 @@ extension WDEnum {
         }
     }
     func enumTestnextDay() {
-        
         //    <!--使用-->
             var w = Weak_7.MON
             w.nextDay()
             print(w)
+        
+        print("WDEnum Weak_7 size",MemoryLayout<Weak_7>.size)
+        print("WDEnum Weak_7 stride",MemoryLayout<Weak_7>.stride)
     }
 }
+
+
+// MARK: - indirect关键字
+//如果我们想要表达的enum是一个复杂的关键数据结构时，可以通过indirect关键字来让当前的enum更简洁
+extension WDEnum {
+    // 用枚举表示链表结构
+    enum List<T> {
+        case end
+        indirect case node(T,next: List<T>)
+    }
+    
+//    <!--也可以将indirect放在enum前-->
+    //表示整个enum是用引用来存储
+    indirect enum List1<T> {
+        case end
+        case node(T,next: List1<T>)
+    }
+//    因为enum是值类型，也就意味着他们的大小在编译时期就确定了，那么这个过程中对于当前的enum的大小是不能确定的，从系统的角度来说，不知道需要给enum分配多大的空间，以下是官方文档的解释
+//    You indicate that an enumeration case is recursive by writing indi rect before it, which tells the compiler to insert the necessary l ayer of indirection.
+    
+}
+
+
+//
+//swift和OC混编enum
+//在swift中，enum非常强大，可以添加方法、添加extension
+//而在OC中，enum仅仅只是一个整数值
+//
+//如果想将swift中的enum暴露给OC使用：
+//
+//用@objc关键字标记enum
+//当前enum应该是Int类型
+
+/*
+ 
+<!--swift中定义-->
+@objc enum Weak: Int{
+    case MON, TUE, WED, THU, FRI, SAT, SUN
+}
+
+<!--OC使用-->
+- (void)test{
+    Weak mon = WeakMON;
+}
+ 
+ <!--OC定义-->
+ //会自动转换成swift的enum
+ NS_ENUM(NSInteger, OCENUM){
+     Value1,
+     Value2
+ };
+
+ <!--swift使用-->
+ //1、将OC头文件导入桥接文件
+ #import "CJLTest.h"
+ //2、使用
+ let ocEnum = OCENUM.Value1
+ 
+*/
+
+
+
+
+
+/*
+总结
+枚举说明：
+1、enum中使用rawValue的本质是调用get方法，即在get方法中从Mach-O对应地址中取出字符串并返回的操作
+
+2、enum中init方法的调用是通过枚举.init(rawValue:）或者枚举(rawValue:）触发的
+
+3、没有关联值的enum，如果希望获取所有枚举值，需要遵循CaseIterable协议，然后通过枚举名.allCase的方式获取
+
+4、case枚举值和rawValue原始值的关系：case 枚举值 = rawValue原始值
+
+5、具有关联值的枚举，可以成为三无enum，因为没有别名RawValue、init、计算属性rawValue
+
+6、enum的模式匹配方式，主要有两种：switch / if case
+
+7、enum可以嵌套enum，也可以在结构体中嵌套enum，表示该enum是struct私有的
+
+8、enum中还可以包含计算属性、类型属性，但是不能包含存储属性
+
+9、enum中可以定义实例 + static修饰的方法
+
+枚举内存大小结论：
+1、普通enum的内存大小一般是1字节，如果只有一个case，则为0，表示没有意义，如果case个数超过255，则枚举值的类型由UInt8->UInt16->UInt32...
+
+2、具有关联值的enum大小，取决于最大case的内存大小+case的大小（1字节）
+
+3、enum嵌套enum同样取决于最大case的关联值大小
+
+4、结构体嵌套enum，如果没有属性，则size为0，如果只有enum属性，size为1，如果还有其他属性，则按照OC中内存对齐原则进行计算
+
+*/
