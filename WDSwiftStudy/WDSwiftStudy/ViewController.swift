@@ -48,6 +48,11 @@ class ViewController: UIViewController {
         
         let wdMirrorDemo = WDMirror()
         wdMirrorDemo.wdMirrorDemo()
+        
+        
+        let wdenum = WDEnum()
+        wdenum.wdEnumTest()
+        
     }
     
     // MARK: - 函数
