@@ -36,6 +36,10 @@
 		4CC2643025F21D440008EE40 /* WDPerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC2642F25F21D440008EE40 /* WDPerson.swift */; };
 		4CC2643525F220200008EE40 /* WDStudent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC2643425F220200008EE40 /* WDStudent.swift */; };
 		4CC2643A25F220A30008EE40 /* WDDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC2643925F220A30008EE40 /* WDDemo.swift */; };
+		76E89E762812A97D0045317D /* WDOptional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E89E752812A97D0045317D /* WDOptional.swift */; };
+		76E89E782814177A0045317D /* WDEnumMemers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E89E772814177A0045317D /* WDEnumMemers.swift */; };
+		76E89E7A281439220045317D /* WDStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E89E79281439220045317D /* WDStruct.swift */; };
+		76E89E7C2814FD260045317D /* WDClosureExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E89E7B2814FD260045317D /* WDClosureExpression.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +81,10 @@
 		4CC2642F25F21D440008EE40 /* WDPerson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WDPerson.swift; sourceTree = "<group>"; };
 		4CC2643425F220200008EE40 /* WDStudent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WDStudent.swift; sourceTree = "<group>"; };
 		4CC2643925F220A30008EE40 /* WDDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WDDemo.swift; sourceTree = "<group>"; };
+		76E89E752812A97D0045317D /* WDOptional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WDOptional.swift; sourceTree = "<group>"; };
+		76E89E772814177A0045317D /* WDEnumMemers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WDEnumMemers.swift; sourceTree = "<group>"; };
+		76E89E79281439220045317D /* WDStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WDStruct.swift; sourceTree = "<group>"; };
+		76E89E7B2814FD260045317D /* WDClosureExpression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WDClosureExpression.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +138,7 @@
 				4C36941225C157200088392C /* AppDelegate.swift */,
 				4C36941425C157200088392C /* SceneDelegate.swift */,
 				4C36941625C157200088392C /* ViewController.swift */,
+				76E89E752812A97D0045317D /* WDOptional.swift */,
 				4CC2643925F220A30008EE40 /* WDDemo.swift */,
 				4CC2642F25F21D440008EE40 /* WDPerson.swift */,
 				4CC2643425F220200008EE40 /* WDStudent.swift */,
@@ -137,6 +146,9 @@
 				4C863604260328DD0021DA76 /* WDMirror.swift */,
 				4C863612260335850021DA76 /* WDMirrorJosnMap.swift */,
 				4C9996852604B2740087ED00 /* WDEnum.swift */,
+				76E89E772814177A0045317D /* WDEnumMemers.swift */,
+				76E89E79281439220045317D /* WDStruct.swift */,
+				76E89E7B2814FD260045317D /* WDClosureExpression.swift */,
 				4C36941825C157200088392C /* Main.storyboard */,
 				4C36941B25C157220088392C /* Assets.xcassets */,
 				4C36941D25C157220088392C /* LaunchScreen.storyboard */,
@@ -318,14 +330,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C8636002601DD8C0021DA76 /* WDTypedOrRawPointer.swift in Sources */,
+				76E89E762812A97D0045317D /* WDOptional.swift in Sources */,
 				4C36941725C157200088392C /* ViewController.swift in Sources */,
+				76E89E7A281439220045317D /* WDStruct.swift in Sources */,
 				4C36941325C157200088392C /* AppDelegate.swift in Sources */,
 				4C9996862604B2740087ED00 /* WDEnum.swift in Sources */,
 				4C36941525C157200088392C /* SceneDelegate.swift in Sources */,
+				76E89E782814177A0045317D /* WDEnumMemers.swift in Sources */,
 				4CC2643025F21D440008EE40 /* WDPerson.swift in Sources */,
 				4CC2643525F220200008EE40 /* WDStudent.swift in Sources */,
 				4CC2643A25F220A30008EE40 /* WDDemo.swift in Sources */,
 				4C863613260335850021DA76 /* WDMirrorJosnMap.swift in Sources */,
+				76E89E7C2814FD260045317D /* WDClosureExpression.swift in Sources */,
 				4C863605260328DD0021DA76 /* WDMirror.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

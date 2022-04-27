@@ -12,48 +12,65 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        view.backgroundColor = UIColor.init(red: 1, green: 1, blue: 1, alpha: 0.5)
-        
-        let a = 20
-        let b = 33.7
-        let c = a + Int(b)
-        let d = Double(a) + b
-        
-        print("c = \(c)")
-        print("d = \(d)")
+//        view.backgroundColor = UIColor.init(red: 1, green: 1, blue: 1, alpha: 0.5)
+//
+//        let a = 20
+//        let b = 33.7
+//        let c = a + Int(b)
+//        let d = Double(a) + b
+//
+//        print("c = \(c)")
+//        print("d = \(d)")
 
-        demo1()
-        demo2()
-        demo3()
-        demo4(a: 22)
-        demo5()
-        demo6()
-        demo7()
-        demo8()
-        demo9()
-        demo10()
+//        demo1()
+//        demo2()
+//        demo3()
+//        demo4(a: 22)
+//        demo5()
+//        demo6()
+//        demo7()
+//        demo8()
+//        demo9()
+//        demo10()
         
-        let wdDemo = WDDemo()
-        wdDemo.wdDemo1()
-        let age_1 = wdDemo.addExtensionFunc(age: 10)
-        print("addExtensionFunc \(age_1)")
+        demo11()
         
-        let t = WDShareinstace.shareInstace
-        t.name = "jjj"
-        print("WDShareinstace",t.name)
+//        let wdDemo = WDDemo()
+//        wdDemo.wdDemo1()
+//        let age_1 = wdDemo.addExtensionFunc(age: 10)
+//        print("addExtensionFunc \(age_1)")
+//
+//        let t = WDShareinstace.shareInstace
+//        t.name = "jjj"
+//        print("WDShareinstace",t.name)
+//
+//        print("==================== WDTypedOrRawPointer")
+//        let pointer = WDTypedOrRawPointer()
+//        pointer.wdTypedOrRawPointer()
+//
+//        let wdMirrorDemo = WDMirror()
+//        wdMirrorDemo.wdMirrorDemo()
+//
+//
+//        let wdenum = WDEnum()
+//        wdenum.wdEnumTest()
         
-        print("==================== WDTypedOrRawPointer")
-        let pointer = WDTypedOrRawPointer()
-        pointer.wdTypedOrRawPointer()
         
-        let wdMirrorDemo = WDMirror()
-        wdMirrorDemo.wdMirrorDemo()
-        
-        
-        let wdenum = WDEnum()
-        wdenum.wdEnumTest()
         
     }
+    // MARK: - 带间隔的区间值
+    func demo11() {
+        
+        let hours = 111
+        let hourImaterval = 2
+        //tickMark的取值：从4开始，累加2，不超过11
+        for tickMark in stride(from: 4, through: hours, by: hourImaterval) {
+            print(tickMark)
+        }
+        
+    }
+    
+    
     
     // MARK: - 函数
     func demo10()  {
@@ -471,6 +488,7 @@ class ViewController: UIViewController {
             print("[100 ,200]")
         case 201 ,300:
             print("[201 ,300]")
+            fallthrough
         case 301 ,400:
             print("[301 ,400]")
         case 401 ,500:
@@ -478,7 +496,95 @@ class ViewController: UIViewController {
         default:
             print("不在区间")
         }
+        
+        let string = "kk"
+        switch string {
+        case "kk":
+            fallthrough
+        case "ll":
+            print("kk ll")
+        default:
+            break
+        }
+        
+        let point = (1,-1)
+        switch point {
+        case let(x, y) where x == y:
+            print("on the line x == y")
+        case let(x, y) where x == -y: {
+            print("on the line x == -y")
+        }
+        default:
+            break
+        }
+        
+        outer: for i in 1...4 {
+            for k in 1...4 {
+                if k == 2 {
+                    continue outer// 标签标记对应的for循环
+                }
+                if i == 3 {
+                    break outer
+                }
+            }
+        }
     }
+    
+    
+    /// 返回多个元组
+    ///
+    /// - Parameters:
+    ///   - v1: 参数1
+    ///   - v2: 参数2
+    /// - Returns: 返回多个元组
+    func cal(v1: Int, v2: Int) -> (sum: Int, difference:Int, average:Int) {
+        let sum = v1 + v2;
+        return (sum, v1 - v2, sum >> 1)
+    }
+    
+    
+    /// 标签 参数，使用时用 at
+    /// - Parameter time: 参数时间
+    func gotoJob(at time: String) {
+        print("go to job \(time)")
+    }
+    
+    
+    /// 参数可以有默认值
+    /// - Parameters:
+    ///   - name: 姓名 默认Jack
+    ///   - age: 年龄 默认0
+    ///   - job: 工作默认 none
+    func check(name: String = "Jack", age: Int = 0, job: String = "none") {
+        print("1","2",separator: "=")
+    }
+    
+    /// 可变参数类型
+    /// - Parameter numbers: 多个同类型的参数
+    /// - Returns:  sum
+    func sum (_ numbers: Int...) -> Int {
+        var total = 0
+        for num in numbers {
+            total += num
+        }
+        return total
+    }
+    
+    
+    /// 输入输出参数
+    /// - Parameters:
+    ///   - v1: <#v1 description#>
+    ///   - v2: <#v2 description#>
+    func swa(_ v1: inout Int, _ v2: inout Int) {
+        let temp1 = 2
+        let temp2 = 3
+        v1 = temp1
+        v2 = temp2
+    }
+    var a = 4
+    var b = 5
+    
+    
     
 }
 
