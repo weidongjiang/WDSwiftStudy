@@ -21,6 +21,8 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		047CDCA7ADD59B8DED372553 /* Pods_WDSwiftStudyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F6B18D568FAFA84C385BDF9 /* Pods_WDSwiftStudyTests.framework */; };
+		4927283F89160E8D45BFD183 /* Pods_WDSwiftStudy_WDSwiftStudyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A980147B87B95CE2EF205C1 /* Pods_WDSwiftStudy_WDSwiftStudyUITests.framework */; };
 		4C36941325C157200088392C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C36941225C157200088392C /* AppDelegate.swift */; };
 		4C36941525C157200088392C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C36941425C157200088392C /* SceneDelegate.swift */; };
 		4C36941725C157200088392C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C36941625C157200088392C /* ViewController.swift */; };
@@ -40,6 +42,8 @@
 		76E89E782814177A0045317D /* WDEnumMemers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E89E772814177A0045317D /* WDEnumMemers.swift */; };
 		76E89E7A281439220045317D /* WDStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E89E79281439220045317D /* WDStruct.swift */; };
 		76E89E7C2814FD260045317D /* WDClosureExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E89E7B2814FD260045317D /* WDClosureExpression.swift */; };
+		76E89ED2281B7F450045317D /* WDLiveGiftPlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E89ED1281B7F450045317D /* WDLiveGiftPlay.swift */; };
+		FA6193E266FB5C7809BF3E6F /* Pods_WDSwiftStudy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EA136150C0571149A9869DB /* Pods_WDSwiftStudy.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +64,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04D9C64D1836DB9B0EC92546 /* Pods-WDSwiftStudy-WDSwiftStudyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WDSwiftStudy-WDSwiftStudyUITests.release.xcconfig"; path = "Target Support Files/Pods-WDSwiftStudy-WDSwiftStudyUITests/Pods-WDSwiftStudy-WDSwiftStudyUITests.release.xcconfig"; sourceTree = "<group>"; };
+		1F6B18D568FAFA84C385BDF9 /* Pods_WDSwiftStudyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WDSwiftStudyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C36940F25C157200088392C /* WDSwiftStudy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WDSwiftStudy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C36941225C157200088392C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C36941425C157200088392C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,10 +87,18 @@
 		4CC2642F25F21D440008EE40 /* WDPerson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WDPerson.swift; sourceTree = "<group>"; };
 		4CC2643425F220200008EE40 /* WDStudent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WDStudent.swift; sourceTree = "<group>"; };
 		4CC2643925F220A30008EE40 /* WDDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WDDemo.swift; sourceTree = "<group>"; };
+		573AB936F834D2229AFFDC3C /* Pods-WDSwiftStudy-WDSwiftStudyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WDSwiftStudy-WDSwiftStudyUITests.debug.xcconfig"; path = "Target Support Files/Pods-WDSwiftStudy-WDSwiftStudyUITests/Pods-WDSwiftStudy-WDSwiftStudyUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		5A980147B87B95CE2EF205C1 /* Pods_WDSwiftStudy_WDSwiftStudyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WDSwiftStudy_WDSwiftStudyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F2C4E9C8900BD48E6B34FE2 /* Pods-WDSwiftStudy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WDSwiftStudy.release.xcconfig"; path = "Target Support Files/Pods-WDSwiftStudy/Pods-WDSwiftStudy.release.xcconfig"; sourceTree = "<group>"; };
 		76E89E752812A97D0045317D /* WDOptional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WDOptional.swift; sourceTree = "<group>"; };
 		76E89E772814177A0045317D /* WDEnumMemers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WDEnumMemers.swift; sourceTree = "<group>"; };
 		76E89E79281439220045317D /* WDStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WDStruct.swift; sourceTree = "<group>"; };
 		76E89E7B2814FD260045317D /* WDClosureExpression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WDClosureExpression.swift; sourceTree = "<group>"; };
+		76E89ED1281B7F450045317D /* WDLiveGiftPlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WDLiveGiftPlay.swift; sourceTree = "<group>"; };
+		79D9A0287FD64C30771B5A69 /* Pods-WDSwiftStudyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WDSwiftStudyTests.release.xcconfig"; path = "Target Support Files/Pods-WDSwiftStudyTests/Pods-WDSwiftStudyTests.release.xcconfig"; sourceTree = "<group>"; };
+		7B9221E3C0BD9F6ED30A12DA /* Pods-WDSwiftStudy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WDSwiftStudy.debug.xcconfig"; path = "Target Support Files/Pods-WDSwiftStudy/Pods-WDSwiftStudy.debug.xcconfig"; sourceTree = "<group>"; };
+		9EA136150C0571149A9869DB /* Pods_WDSwiftStudy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WDSwiftStudy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B43A0952A916DC014B945580 /* Pods-WDSwiftStudyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WDSwiftStudyTests.debug.xcconfig"; path = "Target Support Files/Pods-WDSwiftStudyTests/Pods-WDSwiftStudyTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA6193E266FB5C7809BF3E6F /* Pods_WDSwiftStudy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				047CDCA7ADD59B8DED372553 /* Pods_WDSwiftStudyTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,12 +122,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4927283F89160E8D45BFD183 /* Pods_WDSwiftStudy_WDSwiftStudyUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		044352836FF1C4B88033FFAF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9EA136150C0571149A9869DB /* Pods_WDSwiftStudy.framework */,
+				5A980147B87B95CE2EF205C1 /* Pods_WDSwiftStudy_WDSwiftStudyUITests.framework */,
+				1F6B18D568FAFA84C385BDF9 /* Pods_WDSwiftStudyTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1969BD6F443CF554BD7F13C3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7B9221E3C0BD9F6ED30A12DA /* Pods-WDSwiftStudy.debug.xcconfig */,
+				6F2C4E9C8900BD48E6B34FE2 /* Pods-WDSwiftStudy.release.xcconfig */,
+				573AB936F834D2229AFFDC3C /* Pods-WDSwiftStudy-WDSwiftStudyUITests.debug.xcconfig */,
+				04D9C64D1836DB9B0EC92546 /* Pods-WDSwiftStudy-WDSwiftStudyUITests.release.xcconfig */,
+				B43A0952A916DC014B945580 /* Pods-WDSwiftStudyTests.debug.xcconfig */,
+				79D9A0287FD64C30771B5A69 /* Pods-WDSwiftStudyTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		4C36940625C1571F0088392C = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +160,8 @@
 				4C36942825C157230088392C /* WDSwiftStudyTests */,
 				4C36943325C157230088392C /* WDSwiftStudyUITests */,
 				4C36941025C157200088392C /* Products */,
+				1969BD6F443CF554BD7F13C3 /* Pods */,
+				044352836FF1C4B88033FFAF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -149,6 +192,7 @@
 				76E89E772814177A0045317D /* WDEnumMemers.swift */,
 				76E89E79281439220045317D /* WDStruct.swift */,
 				76E89E7B2814FD260045317D /* WDClosureExpression.swift */,
+				76E89ED1281B7F450045317D /* WDLiveGiftPlay.swift */,
 				4C36941825C157200088392C /* Main.storyboard */,
 				4C36941B25C157220088392C /* Assets.xcassets */,
 				4C36941D25C157220088392C /* LaunchScreen.storyboard */,
@@ -182,9 +226,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4C36943925C157230088392C /* Build configuration list for PBXNativeTarget "WDSwiftStudy" */;
 			buildPhases = (
+				853DD5084F13A695954AF5E0 /* [CP] Check Pods Manifest.lock */,
 				4C36940B25C157200088392C /* Sources */,
 				4C36940C25C157200088392C /* Frameworks */,
 				4C36940D25C157200088392C /* Resources */,
+				C03F7F47D455E7BB0A762768 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -199,6 +245,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4C36943C25C157230088392C /* Build configuration list for PBXNativeTarget "WDSwiftStudyTests" */;
 			buildPhases = (
+				3857C65B60516FF885BCD533 /* [CP] Check Pods Manifest.lock */,
 				4C36942125C157230088392C /* Sources */,
 				4C36942225C157230088392C /* Frameworks */,
 				4C36942325C157230088392C /* Resources */,
@@ -217,9 +264,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4C36943F25C157230088392C /* Build configuration list for PBXNativeTarget "WDSwiftStudyUITests" */;
 			buildPhases = (
+				0D7D880F15DAB8326B9ACF22 /* [CP] Check Pods Manifest.lock */,
 				4C36942C25C157230088392C /* Sources */,
 				4C36942D25C157230088392C /* Frameworks */,
 				4C36942E25C157230088392C /* Resources */,
+				AF0198F8E746C92D61298091 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -305,6 +354,50 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0D7D880F15DAB8326B9ACF22 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WDSwiftStudy-WDSwiftStudyUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3857C65B60516FF885BCD533 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WDSwiftStudyTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		4C9996932609D8FE0087ED00 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -321,6 +414,62 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nswiftc -emit-sil ${SRCROOT}/06、WDSwiftStudy/WDEnum.swift | xcrun swift-demangle > ./WDEnum.sil && code WDEnum.sil\n";
+		};
+		853DD5084F13A695954AF5E0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WDSwiftStudy-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AF0198F8E746C92D61298091 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WDSwiftStudy-WDSwiftStudyUITests/Pods-WDSwiftStudy-WDSwiftStudyUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WDSwiftStudy-WDSwiftStudyUITests/Pods-WDSwiftStudy-WDSwiftStudyUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WDSwiftStudy-WDSwiftStudyUITests/Pods-WDSwiftStudy-WDSwiftStudyUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C03F7F47D455E7BB0A762768 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WDSwiftStudy/Pods-WDSwiftStudy-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WDSwiftStudy/Pods-WDSwiftStudy-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WDSwiftStudy/Pods-WDSwiftStudy-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -339,6 +488,7 @@
 				76E89E782814177A0045317D /* WDEnumMemers.swift in Sources */,
 				4CC2643025F21D440008EE40 /* WDPerson.swift in Sources */,
 				4CC2643525F220200008EE40 /* WDStudent.swift in Sources */,
+				76E89ED2281B7F450045317D /* WDLiveGiftPlay.swift in Sources */,
 				4CC2643A25F220A30008EE40 /* WDDemo.swift in Sources */,
 				4C863613260335850021DA76 /* WDMirrorJosnMap.swift in Sources */,
 				76E89E7C2814FD260045317D /* WDClosureExpression.swift in Sources */,
@@ -515,6 +665,7 @@
 		};
 		4C36943A25C157230088392C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B9221E3C0BD9F6ED30A12DA /* Pods-WDSwiftStudy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -535,6 +686,7 @@
 		};
 		4C36943B25C157230088392C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6F2C4E9C8900BD48E6B34FE2 /* Pods-WDSwiftStudy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -555,6 +707,7 @@
 		};
 		4C36943D25C157230088392C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B43A0952A916DC014B945580 /* Pods-WDSwiftStudyTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -577,6 +730,7 @@
 		};
 		4C36943E25C157230088392C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 79D9A0287FD64C30771B5A69 /* Pods-WDSwiftStudyTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -599,6 +753,7 @@
 		};
 		4C36944025C157230088392C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 573AB936F834D2229AFFDC3C /* Pods-WDSwiftStudy-WDSwiftStudyUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -619,6 +774,7 @@
 		};
 		4C36944125C157230088392C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 04D9C64D1836DB9B0EC92546 /* Pods-WDSwiftStudy-WDSwiftStudyUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

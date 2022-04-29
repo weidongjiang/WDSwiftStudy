@@ -46,33 +46,33 @@ func test() {
 //        print("\(first) < \(second) < 100")
 //    }
     
-    let a: Int? = nil
-    let b: Int? = 1
-    
-    if let c = a, let d = b {
-        
-    }
-    // 类似于
-    if a != nil && b != nil
-    
-    
-    if let c = a ?? b {
-        print(c)
-    }
-    /// 类似于
-    var c: Int?
-    if a != nil || b != nil {
-        if a != nil {
-            c = a
-        }
-        if b != nil {
-            c = b
-        }
-    }
- 
-    let num1: Int! = 10
-    let num2: Int = num1
-    
+//    let a: Int? = nil
+//    let b: Int? = 1
+//
+//    if let c = a, let d = b {
+//
+//    }
+//    // 类似于
+//    if a != nil && b != nil
+//
+//
+//    if let c = a ?? b {
+//        print(c)
+//    }
+//    /// 类似于
+//    var c: Int?
+//    if a != nil || b != nil {
+//        if a != nil {
+//            c = a
+//        }
+//        if b != nil {
+//            c = b
+//        }
+//    }
+// 
+//    let num1: Int! = 10
+//    let num2: Int = num1
+//
     
 }
 

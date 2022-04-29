@@ -511,7 +511,7 @@ class ViewController: UIViewController {
         switch point {
         case let(x, y) where x == y:
             print("on the line x == y")
-        case let(x, y) where x == -y: {
+        case let(x, y) where x == -y: do {
             print("on the line x == -y")
         }
         default:

@@ -1,0 +1,6 @@
+framework module Pods_WDSwiftStudy {
+  umbrella header "Pods-WDSwiftStudy-umbrella.h"
+
+  export *
+  module * { export * }
+}
