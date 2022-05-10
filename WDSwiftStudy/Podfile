@@ -16,9 +16,16 @@ target 'WDSwiftStudy' do
     # Pods for testing
   end
 
+  pod 'SVGAPlayer'
+  pod 'SnapKit'
+  pod 'RxSwift'
+  pod 'RxCocoa'
 
+  pod 'Alamofire'
+  pod 'Kingfisher'
+  pod 'HandyJSON'
+  pod 'KakaJSON'
 
 end
 
-pod 'SVGAPlayer'
-pod 'SnapKit'
+

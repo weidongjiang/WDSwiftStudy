@@ -1,5 +1,15 @@
 PODS:
+  - Alamofire (5.6.1)
+  - HandyJSON (5.0.2)
+  - KakaJSON (1.1.2)
+  - Kingfisher (7.2.1)
   - Protobuf (3.20.1)
+  - RxCocoa (6.5.0):
+    - RxRelay (= 6.5.0)
+    - RxSwift (= 6.5.0)
+  - RxRelay (6.5.0):
+    - RxSwift (= 6.5.0)
+  - RxSwift (6.5.0)
   - SnapKit (5.0.1)
   - SSZipArchive (2.4.3)
   - SVGAPlayer (2.5.7):
@@ -12,22 +22,42 @@ PODS:
     - Protobuf (~> 3.4)
 
 DEPENDENCIES:
+  - Alamofire
+  - HandyJSON
+  - KakaJSON
+  - Kingfisher
+  - RxCocoa
+  - RxSwift
   - SnapKit
   - SVGAPlayer
 
 SPEC REPOS:
   trunk:
+    - Alamofire
+    - HandyJSON
+    - KakaJSON
+    - Kingfisher
     - Protobuf
+    - RxCocoa
+    - RxRelay
+    - RxSwift
     - SnapKit
     - SSZipArchive
     - SVGAPlayer
 
 SPEC CHECKSUMS:
+  Alamofire: 87bd8c952f9a4454320fce00d9cc3de57bcadaf5
+  HandyJSON: 9e4e236f5d2dbefad5155a77417bbea438201c03
+  KakaJSON: cc5ff50a8c1cfbb09413db8496cb709a209e6137
+  Kingfisher: 7c084bebf7d548c623ad41bcf765fb200efed369
   Protobuf: b60ec2f51ad74765f44d0c09d2e0579d7de21745
+  RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
+  RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
+  RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SSZipArchive: fe6a26b2a54d5a0890f2567b5cc6de5caa600aef
   SVGAPlayer: 318b85a78b61292d6ae9dfcd651f3f0d1cdadd86
 
-PODFILE CHECKSUM: 411de713a84f1cdc2d0e0181a95ae49aa942fe3c
+PODFILE CHECKSUM: 45d21b4037b95ba30d82aa5d8b13665d7daeae23
 
 COCOAPODS: 1.10.1

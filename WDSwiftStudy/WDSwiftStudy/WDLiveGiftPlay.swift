@@ -135,6 +135,10 @@ class LNSVGAViewController: UIViewController {
             self.completeTimes = 0
             self.svgaPalyer.clear()
         }
+        // MARK：-
+//        #warning("todo")
+
+        // TODO:
     }
     
     func lock() {

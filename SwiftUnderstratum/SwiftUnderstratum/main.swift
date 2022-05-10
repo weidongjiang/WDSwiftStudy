@@ -5,6 +5,43 @@
 //  Created by 蒋伟东 on 2022/5/2.
 //
 
+import Foundation
+
+
+
+extension Int : ExpressibleByBooleanLiteral {
+    public init(booleanLiteral value: BooleanLiteralType) {
+        self = value ? 1 : 0;
+    }
+}
+
+var num: Int = true
+
+
+var age = 10
+var isRed = false
+var name = "Jack"
+
+
+
+var ptr = UnsafeMutableRawPointer.allocate(byteCount: 16, alignment: 1)
+ptr.assumingMemoryBound(to: Int.self)
+
+unsafeBitCast(ptr, to: UnsafeMutablePointer<Int>.self)
+
+
+var array = NSArray(objects: 1, 2, 3, 4)
+for item in array.enumerated() {
+    print(item)
+}
+for (idx,ele) in array.enumerated() {
+    print("enumerated",idx,ele)
+}
+
+array.enumerateObjects { ele, idx, stop in
+    print("enumerateObjects",idx,ele)
+    stop.pointee = true
+}
 
 //class kk {
 //    private class Person {}
@@ -28,7 +65,7 @@
 //
 //print("1")
 
-func isOdd<T: BinaryInteger>(_ i: T) -> Bool {
+func isOdd<T: BinaryInteger>(_ i:  T) -> Bool {
     i % 2 != 0
 }
 
@@ -47,23 +84,23 @@ extension Po {
 }
 
 
-class Per : CustomDebugStringConvertible{
-    var age: Int
-    var name: String
-    init(age: Int, name: String) {
-        self.age = age
-        self.name = name
-    }
-}
+//class Per : CustomDebugStringConvertible{
+//    var age: Int
+//    var name: String
+//    init(age: Int, name: String) {
+//        self.age = age
+//        self.name = name
+//    }
+//}
 
-extension Per : Equatable {
-    static func == (left: Per, right: Per) -> Bool {
-        left.age == right.age && left.name == right.name
-    }
-    convenience init() {
-        self.init(age: 0, name: "")
-    }
-}
+//extension Per : Equatable {
+//    static func == (left: Per, right: Per) -> Bool {
+//        left.age == right.age && left.name == right.name
+//    }
+//    convenience init() {
+//        self.init(age: 0, name: "")
+//    }
+//}
 
 
 

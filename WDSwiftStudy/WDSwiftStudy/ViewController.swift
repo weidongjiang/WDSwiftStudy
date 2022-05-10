@@ -6,11 +6,42 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        URLAPI().getDataimgRank(URLAPI().imgRank)
+        
+        let label : UILabel = UILabel.init(frame: CGRect(x: 100, y: 100, width: 100, height: 100))
+        
+        self.view.addSubview(label)
+        
+
+        var binder = Binder<String>(label){ label, text in
+            label.text = text
+        }
+        
+        Observable.just(1).map{"数值是：\($0)"}.subscribe(binder).dispose()
+        
+        
+//        WDObserver.creatobservable()
+        
+        
+        
+        
+//        let str = "123ef3244rfs".wd.numberCount
+//        print(str)
+//        
+//        String.wd.test()
+//        
+//        let s1 : NSString = "123erf"
+//        print(s1.wd.numberCount)
+        
+//        WDLog("kkkkkk")
         // Do any additional setup after loading the view.
 //        view.backgroundColor = UIColor.init(red: 1, green: 1, blue: 1, alpha: 0.5)
 //
@@ -33,7 +64,7 @@ class ViewController: UIViewController {
 //        demo9()
 //        demo10()
         
-        demo11()
+//        demo11()
         
 //        let wdDemo = WDDemo()
 //        wdDemo.wdDemo1()

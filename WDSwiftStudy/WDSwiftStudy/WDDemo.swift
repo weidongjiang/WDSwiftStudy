@@ -6,9 +6,30 @@
 //
 
 import UIKit
+import Foundation
+
+//class User {
+//    var name: String
+//    var age: Int
+//    init?(_ json: [String : Any]) {
+//        guard let name = json["name"] as? String, let age = json["age"] as? Int else {
+//            return nil
+//        }
+//        self.name = name
+//        self.age = age
+//    }
+//}
+//
+//var json: Dictionary? = ["name" : "kk", "age" : 100]
+//var user1 = json != nil ? User(json!) : nil
+//var user2 = json.flatMap(User.init)
+
+
 
 
 class WDDemo: NSObject {
+    
+    
     
     func wdDemo1() {
         let p = WDPerson()
